@@ -1,4 +1,4 @@
 <h1><%= @user.name %></h1>
 <h1><%= @user.email %></h1>
-<%= render partial: "items/item", locals: { users: @user, items: @items } %>
-<%= render partial: "items/form", locals: { user: @user, item: @item } %>
+<%= render partial: "items/item", collection: @items %>
+<%= render partial: "items/form", locals: { user: @user, item: @new_item } %>

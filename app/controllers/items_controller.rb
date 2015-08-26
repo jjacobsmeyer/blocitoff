@@ -1,12 +1,8 @@
 class ItemsController < ApplicationController
 
   def create
-    # @user = User.find(params[:user_id])
-    # @items = @user.items
-
     @user = current_user
     @item = Item.new(item_params)
-    # @new_item = Item.new
 
     if @item.save
       flash[:notice] = "Item was created"

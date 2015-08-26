@@ -1,7 +1,5 @@
-<% items.each do |items| %>
-  <%= content_tag :div, class: 'media', id: "items-#{items.id}" do %>
-    <div class="media-body">
-      <p><%= items.name %></p>
-    </div>
-  <% end %>
+<%= content_tag :div, class: 'media', id: "item-#{item.id}" do %>
+  <div class="media-body">
+    <p><%= item.name %></p>
+  </div>
 <% end %>
