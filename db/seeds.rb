@@ -1,21 +1,30 @@
 require 'faker'
 
 # Create Users
-10.times do
-  user = User.new(
-  name: Faker::Name.name,
-  email: Faker::Internet.email,
-  password: Faker::Lorem.characters(10)
-  )
-  user.skip_confirmation!
-  user.save!
-end
+
+user = User.new(
+  name: "James Jacob",
+  email: "jacobsmeyertech@gmail.com",
+  password: "helloworld",
+)
+user.skip_confirmation!
+user.save!
+
+user = User.new(
+  name: "Jermey Jacobs",
+  email: "jasjackson@gmail.com",
+  password: "helloworld",
+)
+user.skip_confirmation!
+user.save!
+
 users = User.all
 
 # Create items
 50.times do
   Item.create!(
     name: Faker::Lorem.sentence,
+    user: users.sample
     )
 end
 items = Item.all

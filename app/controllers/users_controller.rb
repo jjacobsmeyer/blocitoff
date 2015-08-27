@@ -4,7 +4,9 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @new_item = Item.new
-    @items = Item.all
+    @items = @user.items
+
+
   end
 
   private
