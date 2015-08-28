@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @new_item = Item.new
-    @items = @user.items
+    @items = @user.items.order(created_at: :desc)
 
 
   end
