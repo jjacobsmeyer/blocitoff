@@ -3,6 +3,7 @@ class ItemsController < ApplicationController
   def create
     @user = current_user
     @item = Item.new(item_params)
+    @item.user = @user
 
     if @item.save
       flash[:notice] = "Item was created"

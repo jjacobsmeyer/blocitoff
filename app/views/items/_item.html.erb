@@ -1,8 +1,9 @@
 <%= content_tag :div, class: 'media', id: "item-#{item.id}" do %>
   <div class="media-body">
-    <div><%= item.name %></div>
-    <div><%= item.user.name %></div>
-    <div><%= "#{item.days_left} days until this item is deleted." %></div>
-    <%= link_to "", [@user, item], method: :delete, class: 'glyphicon glyphicon-ok', remote: true %>
+    <div class="row">
+      <div class="col-md-1 checkmark"><%= link_to "", [@user, item], method: :delete, class: 'glyphicon glyphicon-ok', remote: true %></div>
+      <div class="col-md-11"><%= item.name %></div>
+      <div class="col-md-12"><small><%= "#{item.days_left} days until this item is deleted." %></small></div>
+    </div>
   </div>
 <% end %>
